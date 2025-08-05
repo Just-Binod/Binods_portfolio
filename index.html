@@ -3,21 +3,117 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="css/style.css" />
+    <title>Binod - Home</title>
+
+    <!-- Tailwind CSS & Flowbite -->
+    <script src="https://cdn.tailwindcss.com"></script>
     <link
       href="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.css"
       rel="stylesheet"
     />
-    <script src="https://cdn.tailwindcss.com"></script>
-    <title>Binod - Home</title>
+
+    <!-- Standard Favicon -->
+    <link rel="icon" href="favicons/favicon.ico" type="image/x-icon" />
+
+    <!-- PNG Favicons for modern browsers -->
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="favicons/favicon-16x16.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="favicons/favicon-32x32.png"
+    />
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="192x192"
+      href="favicons/android-chrome-192x192.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="512x512"
+      href="favicons/android-chrome-512x512.png"
+    />
+
+    <!-- Favicon -->
+
+    <!-- Custom Animation Styles -->
+    <style>
+      .typing-container {
+        display: inline-block;
+        white-space: nowrap;
+        overflow: hidden;
+        border-right: 2px solid #9333ea; /* Thinner cursor, closer to text */
+        animation: typing 3s steps(18, end) infinite,
+          blink 0.7s step-end infinite, glow 3s ease-in-out infinite;
+        width: 0;
+      }
+
+      @keyframes typing {
+        0% {
+          width: 0;
+        }
+        80% {
+          width: 100%;
+        } /* Hold briefly at full width */
+        100% {
+          width: 100%;
+        } /* Smooth reset */
+      }
+
+      @keyframes blink {
+        0%,
+        50% {
+          border-color: #9333ea;
+        }
+        51%,
+        100% {
+          border-color: transparent;
+        }
+      }
+
+      @keyframes glow {
+        0%,
+        100% {
+          text-shadow: 0 0 5px rgba(147, 51, 234, 0.3);
+        }
+        50% {
+          text-shadow: 0 0 15px rgba(147, 51, 234, 0.7);
+        }
+      }
+
+      .fade-in {
+        opacity: 0;
+        transform: translateY(20px);
+        animation: fadeIn 2s ease-out forwards;
+      }
+
+      @keyframes fadeIn {
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+    </style>
   </head>
+
   <body class="bg-white text-gray-900 dark:bg-gray-900 dark:text-white">
     <!-- Navigation -->
     <nav class="bg-white border-gray-200 dark:bg-gray-900 shadow-md">
       <div
         class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4"
       >
-        <a href="index.html" class="flex items-center space-x-3 rtl:space-x-reverse">
+        <a
+          href="index.html"
+          class="flex items-center space-x-3 rtl:space-x-reverse"
+        >
           <img
             src="images/binod.jpg"
             class="h-10 rounded-full"
@@ -25,10 +121,10 @@
           />
           <span
             class="self-center text-2xl font-semibold whitespace-nowrap text-purple-600 dark:text-purple-400"
-          ><pre>< Binod/></pre>
+          >
+            <pre>< Binod/></pre>
           </span>
         </a>
-
         <button
           data-collapse-toggle="navbar-default"
           type="button"
@@ -98,8 +194,9 @@
       </div>
     </nav>
 
-    <!-- Hero Section with Spline 3D -->
+    <!-- Hero Section -->
     <section class="relative h-screen flex items-center justify-center">
+      <!-- Background Spline -->
       <div class="absolute inset-0 z-0">
         <script
           type="module"
@@ -110,25 +207,34 @@
           style="width: 100%; height: 100%"
         ></spline-viewer>
       </div>
+
+      <!-- Foreground Text -->
       <div class="relative z-10 text-center">
         <h1
-          class="text-5xl md:text-7xl font-bold text-purple-600 dark:text-purple-400 mb-4"
-        ><pre>< Hello World !></pre>
+          class="text-5xl md:text-7xl font-bold text-purple-600 dark:text-purple-400 mb-4 fade-in"
+          style="animation-delay: 0.5s"
+        >
+          <pre>< Hello World !></pre>
         </h1>
-        <p class="text-lg md:text-2xl text-gray-700 dark:text-gray-300 mb-6">
-          Hi, I am Binod Raj pant
-</p>
+        <p
+          class="text-lg md:text-2xl text-gray-700 dark:text-gray-300 mb-6 fade-in"
+          style="animation-delay: 0.8s"
+        >
+          <span class="typing-container text-gray-700 dark:text-gray-400"
+            >I am Binod Raj Pant</span
+          >
         </p>
         <a
           href="projects.html"
-          class="inline-block bg-purple-600 text-white py-3 px-6 rounded-md hover:bg-purple-700 transition duration-300"
+          class="inline-block bg-purple-600 text-white py-3 px-6 rounded-md hover:bg-purple-700 transition duration-300 fade-in"
+          style="animation-delay: 1.5s"
         >
           View My Work
         </a>
       </div>
     </section>
 
-    <!-- Flowbite Scripts -->
+    <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
   </body>
 </html>
